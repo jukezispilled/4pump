@@ -1,4 +1,5 @@
 import "./globals.css"
+import BodyWrapper from './components/BodyWrapper'
 
 export const metadata = {
   title: "4pump",
@@ -8,9 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="custom-gradient min-h-screen">
-        <main className="py-4">{children}</main>
-      </body>
+      <BodyWrapper>{children}</BodyWrapper>
     </html>
   )
 }
