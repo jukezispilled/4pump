@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllBoards } from '@/lib/db-operations';
 import AddressDisplay from './components/Copy';
+import InfoModal from './components/InfoModal';
 
 export default async function HomePage() {
   const boards = await getAllBoards();
@@ -25,6 +26,7 @@ export default async function HomePage() {
             𝕏
           </Link>
           <AddressDisplay contractAddress={contractAddress} />
+          <InfoModal />
         </div>
       </div>
 
