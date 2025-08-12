@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Custom 4chan-style overrides */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.greentext {
+  color: #789922;
+}
+
+.quote-link {
+  color: #0000ee;
+  text-decoration: none;
+}
+
+.quote-link:hover {
+  text-decoration: underline;
+}
+
+.post-content {
+  line-height: 1.4;
+}
+
+.post-content br {
+  line-height: 1.4;
+}
+
+/* Image hover effects */
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+/* Form styling to match 4chan */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+/* Board listing styling */
+.board-grid a {
+  transition: all 0.2s ease;
+}
+
+.board-grid a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* globals.css */
+.custom-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    #8CF2BD 0%,
+    #B8F2D0 10%,
+    #EDFFE5 20%,
+    #F3FFF0 100%
+  );
 }
