@@ -163,7 +163,7 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
   }
 
   return (
-    <div className="bg-gray-100 p-4 border-2 border-gray-300 mb-6 w-[100%] md:w-[65%]">
+    <div className="bg-gray-100 p-4 border-2 border-gray-300 mb-6 w-[100%] md:w-[65%] mt-4">
       <div className="flex justify-between items-center mb-3">
         <h3 className="font-bold text-blue-800">
           {threadNumber ? 'Reply to Thread' : 'Start a New Thread'}
