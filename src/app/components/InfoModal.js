@@ -48,7 +48,7 @@ export default function InfoModal() {
             {/* Modal Content */}
             <div className="text-gray-700 text-center">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                4pump is a 4chan inspired platform for <a href="https://pump.fun" className='inline text-blue-600 underline'>pump.fun</a> and crypto culture. We aim to be the hub for major discourse of all crypto topics. Since we are heavily inspired by 4chan many of the same features the internet has loved for decades are available. For example the legendary greentext with &gt; and reply to post with &gt;&gt;. 4pump was built by a dedicated team with a passion for crypto and the extreme culture that comes with it. We are a small team of traders, developers, and overall crypto-natives. We built 4pump because we believe there isn't anything like this for the general crypto culture. Enjoy the platform, we put our heart and souls into this! And don't forget to behave(as much as cryptopunks can be expected to)
               </p>
             </div>
           </div>
