@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showForm, setShowForm] = useState(threadNumber ? true : false);
+  const [showForm, setShowForm] = useState(false); // Changed: Always start with form hidden
   const [formData, setFormData] = useState({
     content: '',
     author: '',
@@ -132,6 +132,7 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
           tripcode_password: ''
         });
         setSelectedFile(null);
+        setShowForm(false); // Hide form after successful submission
         onPostCreated?.(newPost);
         
         if (!threadNumber) {
@@ -148,15 +149,15 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
     }
   };
 
-  // If it's for starting a new thread and form is not shown, show the button
-  if (!threadNumber && !showForm) {
+  // Show button when form is not displayed
+  if (!showForm) {
     return (
       <div className="mb-6">
         <button
           onClick={() => setShowForm(true)}
           className="px-4 py-2 text-xl cursor-pointer flex justify-center w-full text-gray-900 hover:text-red-600 font-semibold"
         >
-          [Start a New Thread]
+          {threadNumber ? '[Reply to Thread]' : '[Start a New Thread]'}
         </button>
       </div>
     );
@@ -168,14 +169,12 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
         <h3 className="font-bold text-blue-800">
           {threadNumber ? 'Reply to Thread' : 'Start a New Thread'}
         </h3>
-        {!threadNumber && (
-          <button
-            onClick={() => setShowForm(false)}
-            className="text-gray-600 hover:text-gray-800 text-sm cursor-pointer"
-          >
-            ✕
-          </button>
-        )}
+        <button
+          onClick={() => setShowForm(false)}
+          className="text-gray-600 hover:text-gray-800 text-sm cursor-pointer"
+        >
+          ✕
+        </button>
       </div>
 
       {/* Rate limit warning */}

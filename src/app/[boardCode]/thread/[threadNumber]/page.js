@@ -155,7 +155,7 @@ export default function ThreadPage({ params }) {
           
           return (
             <div key={post.postNumber} className="bg-gray-50 border border-gray-300">
-              <div className="p-2 border-b border-gray-200 bg-gray-100">
+              <div className="p-1 border-b border-gray-200 bg-gray-100">
                 <div className="flex items-center">
                   <button
                     onClick={() => togglePostVisibility(post.postNumber)}
