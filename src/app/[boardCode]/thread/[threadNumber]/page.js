@@ -126,8 +126,8 @@ export default function ThreadPage({ params }) {
         </div>
       )}
 
-      <div className="bg-white border border-gray-300 mb-4">
-        <div className="p-2 border-b border-gray-200 bg-gray-50">
+      <div className="bg-white border border-gray-300 mb-2">
+        <div className="p-1 border-b border-gray-200 bg-gray-50">
           <div className="flex items-center">
             <button
               onClick={toggleOPVisibility}
@@ -143,7 +143,7 @@ export default function ThreadPage({ params }) {
           </div>
         </div>
         {!isOPHidden && (
-          <div className="p-4">
+          <div className="p-2">
             <Post post={thread} isOP={true} boardCode={boardCode} />
           </div>
         )}
