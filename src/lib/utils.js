@@ -38,7 +38,7 @@ export function formatFileSize(bytes) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-export function truncateFilename(filename, maxLength = 20) {
+export function truncateFilename(filename, maxLength = 16) {
   // Check if filename exists and is a string
   if (!filename || typeof filename !== 'string') {
       return '';
