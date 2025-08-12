@@ -20,7 +20,7 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
 
   // Rate limiting configuration
   const THREAD_COOLDOWN = 600000; // 10 minutes for new threads
-  const POST_COOLDOWN = 45000;    // 15 seconds for replies
+  const POST_COOLDOWN = 60000;    // 60 seconds for replies
   const STORAGE_KEY_PREFIX = 'postform_last_';
 
   // Check rate limiting on component mount and when threadNumber changes
