@@ -57,6 +57,19 @@ export default async function HomePage() {
         </div>
       </div>
 
+      {/* Popular Threads Coming Soon section */}
+      <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
+        <div className='bg-[#8CF2BD]'>
+          <h2 className="text-lg font-bold mb-4 text-[#890000] px-2">Popular Threads</h2>
+        </div>
+        <div className="p-4">
+          <div className="bg-white border border-gray-300 p-6 text-center">
+            <div className="text-lg font-semibold text-gray-500 mb-2">Coming Soon</div>
+            <div className="text-sm text-gray-400">Popular threads will be displayed here</div>
+          </div>
+        </div>
+      </div>
+
       {/* Stats area with same style as boards */}
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
         <div className='bg-[#8CF2BD]'>
