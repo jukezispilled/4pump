@@ -111,6 +111,7 @@ export default function BoardPage({ params }) {
             <span key={b.code}>
               <Link
                 href={`/${b.code}`}
+                title={`${b.name}${b.description ? ` - ${b.description}` : ''}`}
                 className={`hover:underline font-mono ${
                   b.code === boardCode ? 'text-red-600 font-bold' : 'text-blue-600'
                 }`}
