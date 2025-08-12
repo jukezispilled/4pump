@@ -198,7 +198,7 @@ export default function PostForm({ boardCode, threadNumber, onPostCreated }) {
           
           <input
             type="password"
-            placeholder="Password (for tripcode)(optional)"
+            placeholder="Password(for tripcode)(optional)"
             value={formData.tripcode_password}
             onChange={(e) => setFormData(prev => ({ ...prev, tripcode_password: e.target.value }))}
             className="px-2 py-1 border border-gray-400 text-sm"

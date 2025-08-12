@@ -20,7 +20,7 @@ export default function AddressDisplay({ contractAddress, className = "" }) {
 
   return (
     <div className={`flex items-center gap-1 px-1 py-1 rounded-md ${className}`}>
-      <span className="text-xs text-[#890000] font-semibold">
+      <span className="text-xs text-[#890000] font-medium">
         {truncatedAddress}
       </span>
       <button

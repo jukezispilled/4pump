@@ -16,6 +16,19 @@ export default function BoardPage({ params }) {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [hiddenThreads, setHiddenThreads] = useState(new Set());
+  const [allBoards, setAllBoards] = useState([]);
+
+  const fetchBoards = async () => {
+    try {
+      const response = await fetch('/api/boards');
+      if (response.ok) {
+        const boards = await response.json();
+        setAllBoards(boards);
+      }
+    } catch (error) {
+      console.error('Failed to fetch boards:', error);
+    }
+  };
 
   const fetchThreads = async (pageNum = 1, append = false) => {
     try {
@@ -45,6 +58,7 @@ export default function BoardPage({ params }) {
   };
 
   useEffect(() => {
+    fetchBoards();
     fetchThreads();
   }, [boardCode]);
 
@@ -88,8 +102,29 @@ export default function BoardPage({ params }) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
-      <div className="mb-6">
+    <div className="max-w-6xl mx-auto px-4 pb-4">
+      {/* Top center board links */}
+      <div className="text-center mb-4">
+        <div className="text-sm">
+          [
+          {allBoards.map((b, index) => (
+            <span key={b.code}>
+              <Link
+                href={`/${b.code}`}
+                className={`hover:underline font-mono ${
+                  b.code === boardCode ? 'text-red-600 font-bold' : 'text-blue-600'
+                }`}
+              >
+                {b.code}
+              </Link>
+              {index < allBoards.length - 1 && ' / '}
+            </span>
+          ))}
+          ]
+        </div>
+      </div>
+
+      <div className="pt-4 mb-6">
         <div className="flex items-center justify-between mb-6">
           <div className='absolute left-1/2 -translate-x-1/2'>
             <h1 className="text-xl md:text-3xl font-bold text-[#890000]">/{board.code}/ - {board.name}</h1>
@@ -97,7 +132,7 @@ export default function BoardPage({ params }) {
               <p className="text-gray-600 mt-1 flex justify-center invisible md:visible">{board.description}</p>
             )}
           </div>
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href="/" className="text-blue-600 hover:underline hidden md:block absolute top-4 left-4">
             [Return to Boards]
           </Link>
         </div>
