@@ -151,9 +151,15 @@ export default async function HomePage() {
           <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Stats</h2>
         </div>
         <div className="p-4">
-          <div className="bg-white border border-gray-300 p-4 text-center">
-            <div className="text-2xl font-bold text-[#890000]">{totalPosts.toLocaleString()}</div>
-            <div className="text-sm text-gray-600">Total Posts</div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-white border border-gray-300 p-4 text-center">
+              <div className="text-2xl font-bold text-[#890000]">{totalPosts.toLocaleString()}</div>
+              <div className="text-sm text-gray-600">Total Posts</div>
+            </div>
+            <div className="bg-white border border-gray-300 p-4 text-center">
+              <div className="text-2xl font-bold text-[#890000]">{boards.length}</div>
+              <div className="text-sm text-gray-600">Total Boards</div>
+            </div>
           </div>
         </div>
       </div>
