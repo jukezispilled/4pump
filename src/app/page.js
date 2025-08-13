@@ -25,7 +25,7 @@ export default async function HomePage() {
             href="https://x.com/4pumporg"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#890000] font-semibold text-base"
+            className="text-[#890000] font-semibold text-base mt-0"
           >
             𝕏
           </Link>
