@@ -127,7 +127,7 @@ export default function BoardPage({ params }) {
 
       <div className="pt-4 mb-6">
         <div className="flex items-center justify-between mb-6">
-          <div className='absolute left-1/2 -translate-x-1/2'>
+          <div className='absolute left-1/2 -translate-x-1/2 mb-2'>
             <h1 className="text-xl md:text-3xl font-bold text-[#890000]">/{board.code}/ - {board.name}</h1>
             {board.description && (
               <p className="text-gray-600 mt-1 flex justify-center invisible md:visible">{board.description}</p>
@@ -139,7 +139,7 @@ export default function BoardPage({ params }) {
         </div>
         
         {board.isNSFW && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-4">
             <strong>NSFW Warning:</strong> This board may contain adult content
           </div>
         )}

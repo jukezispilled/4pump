@@ -3,11 +3,6 @@
 import { config } from 'dotenv';
 config({ path: '.env.local' });
 
-// Debug: Check if environment variables are loaded
-console.log('Environment check:');
-console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
-console.log('MONGODB_URI value:', process.env.MONGODB_URI ? 'Found' : 'Missing');
-
 // Now import other modules
 import { initializeIndexes, testConnection } from '../src/lib/mongodb.js';
 import { createBoard } from '../src/lib/db-operations.js';
@@ -33,7 +28,7 @@ const boards = [
     code: 'c',
     name: 'ALTs',
     description: 'Alt Cryptos',
-    isNSFW: true,
+    isNSFW: false,
     maxFileSize: 5 * 1024 * 1024,
     allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
   },
