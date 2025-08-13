@@ -3,6 +3,7 @@
 import { useState, useEffect, use } from 'react';
 import Link from 'next/link';
 import { BsPinAngleFill, BsLockFill } from 'react-icons/bs';
+import { FaLock } from "react-icons/fa";
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 
@@ -175,7 +176,7 @@ export default function BoardPage({ params }) {
                       <BsPinAngleFill className="inline text-red-600 mr-2" size={16} title="Pinned" />
                     )}
                     {thread.isLocked && (
-                      <BsLockFill className="inline text-gray-600 mr-2" size={16} title="Locked" />
+                      <FaLock className="inline text-gray-600 mr-2" size={14} title="Locked" />
                     )}
                     <Link 
                       href={`/${boardCode}/thread/${thread.threadNumber}`}
