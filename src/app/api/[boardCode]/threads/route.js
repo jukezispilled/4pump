@@ -45,6 +45,16 @@ import {
       return Response.json({ error: 'Failed to fetch threads' }, { status: 500 });
     }
   }
+
+  export async function GET() {
+    try {
+      const threads = await getAllThreads();
+      return Response.json(threads);
+    } catch (error) {
+      console.error('Failed to fetch threads:', error);
+      return Response.json({ error: 'Failed to fetch threads' }, { status: 500 });
+    }
+  }
   
   export async function POST(request, { params }) {
     try {
