@@ -131,7 +131,7 @@ export default function BoardPage({ params }) {
           <div className='absolute left-1/2 -translate-x-1/2 mb-2'>
             <h1 className="text-xl md:text-3xl font-bold text-[#890000]">/{board.code}/ - {board.name}</h1>
             {board.description && (
-              <p className="text-gray-600 mt-1 flex justify-center invisible md:visible">{board.description}</p>
+              <p className="text-gray-600 mt-1 text-center hidden md:block">{board.description}</p>
             )}
           </div>
           <Link href="/" className="text-blue-600 hover:underline hidden md:block absolute top-4 left-4">
