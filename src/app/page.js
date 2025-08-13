@@ -47,7 +47,7 @@ export default async function HomePage() {
 
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min">
         <div className='bg-[#8CF2BD]'>
-          <h2 className="text-lg font-bold mb-4 text-[#890000] px-2">Boards</h2>
+          <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Boards</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {boards.map((board) => (
@@ -71,7 +71,7 @@ export default async function HomePage() {
       {/* Popular Threads section */}
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
         <div className='bg-[#8CF2BD]'>
-          <h2 className="text-lg font-bold mb-4 text-[#890000] px-2">Popular Threads</h2>
+          <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Popular Threads</h2>
         </div>
         <div className="p-4">
           {popularThreads.length > 0 ? (
@@ -123,7 +123,7 @@ export default async function HomePage() {
       {/* Stats area with same style as boards */}
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
         <div className='bg-[#8CF2BD]'>
-          <h2 className="text-lg font-bold mb-4 text-[#890000] px-2">Stats</h2>
+          <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Stats</h2>
         </div>
         <div className="p-4">
           <div className="bg-white border border-gray-300 p-4 text-center">

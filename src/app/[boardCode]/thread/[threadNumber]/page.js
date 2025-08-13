@@ -103,7 +103,7 @@ export default function ThreadPage({ params }) {
             <Link href={`/${boardCode}`} className="text-blue-600 hover:underline">
               [Return to Board]
             </Link>
-            <Link href="/" className="text-blue-600 hover:underline hidden md:block">
+            <Link href="/" className="text-blue-600 hover:underline invisible md:visible">
               [Boards]
             </Link>
           </div>
