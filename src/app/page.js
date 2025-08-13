@@ -11,6 +11,12 @@ export default async function HomePage() {
   const boards = await getAllBoards();
   const threads = await getAllThreads();
   
+  // Create a mapping from board code to board name
+  const boardMap = boards.reduce((map, board) => {
+    map[board.code] = board.name;
+    return map;
+  }, {});
+  
   // Calculate total posts across all boards
   const totalPosts = boards.reduce((sum, board) => sum + board.postCount, 0);
   
@@ -42,7 +48,7 @@ export default async function HomePage() {
       </div>
 
       <div className="text-center mb-8">
-        <img src="/head.png" alt="Logo" className="mx-auto mb-2 w-[35%]" />
+        <img src="/head.png" alt="Logo" className="mx-auto mb-2 w-[35%] mt-4 md:mt-0" />
       </div>
 
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min">
@@ -80,8 +86,15 @@ export default async function HomePage() {
                 <Link
                   key={thread.id || `thread-${index}`}
                   href={`/${thread.boardCode}/thread/${thread.threadNumber || thread.id || index}`}
-                  className="block bg-white border border-gray-300 overflow-hidden relative"
+                  className="block bg-white border border-gray-300 overflow-hidden relative p-1"
                 >
+                  {/* Board name overlay */}
+                  <div className="text-center">
+                    <span className="px-3 py-2 rounded text-sm font-semibold">
+                      {boardMap[thread.boardCode] || thread.boardCode}
+                    </span>
+                  </div>
+                  
                   {/* Thread image */}
                   <div className="aspect-video bg-white p-2 overflow-hidden relative">
                     <img 

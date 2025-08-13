@@ -99,7 +99,7 @@ export default function Post({ post, isOP = false, boardCode }) {
                 <img
                   src={post.imageUrl}
                   alt={post.imageName}
-                  className="max-h-64 max-w-64 border border-gray-400"
+                  className="max-h-40 max-w-40 md:max-h-64 md:max-w-64 border border-gray-400"
                 />
               ) : (
                 <img
