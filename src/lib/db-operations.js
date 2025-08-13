@@ -69,6 +69,10 @@ export async function createThread(threadData) {
   };
   
   const result = await collection.insertOne(thread);
+  
+  // IMPORTANT: Increment the board's post count when creating a thread
+  await incrementBoardPostCount(threadData.boardCode, 1);
+  
   return { ...thread, _id: result.insertedId };
 }
 
@@ -129,6 +133,10 @@ export async function createPost(postData) {
   };
   
   const result = await collection.insertOne(post);
+  
+  // IMPORTANT: Increment the board's post count when creating a post
+  await incrementBoardPostCount(postData.boardCode, 1);
+  
   return { ...post, _id: result.insertedId };
 }
 
@@ -238,4 +246,31 @@ export async function getNextPostNumber(boardCode = null) {
   }
   
   return postNumber;
+}
+
+// UTILITY: Function to recalculate and sync all board post counts
+export async function syncBoardPostCounts() {
+  const boardCollection = await getCollection('boards');
+  const postCollection = await getCollection('posts');
+  const threadCollection = await getCollection('threads');
+  
+  const boards = await boardCollection.find({}).toArray();
+  
+  for (const board of boards) {
+    // Count posts and threads for this board
+    const [postCount, threadCount] = await Promise.all([
+      postCollection.countDocuments({ boardCode: board.code }),
+      threadCollection.countDocuments({ boardCode: board.code })
+    ]);
+    
+    const totalCount = postCount + threadCount;
+    
+    // Update the board's post count
+    await boardCollection.updateOne(
+      { code: board.code },
+      { $set: { postCount: totalCount } }
+    );
+  }
+  
+  console.log('Board post counts synchronized successfully');
 }

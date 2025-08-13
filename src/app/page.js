@@ -3,6 +3,10 @@ import { getAllBoards } from '@/lib/db-operations';
 import AddressDisplay from './components/Copy';
 import InfoModal from './components/InfoModal';
 
+// Force dynamic rendering to ensure fresh data
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function HomePage() {
   const boards = await getAllBoards();
   
@@ -88,4 +92,4 @@ export default async function HomePage() {
       </div>
     </div>
   );
-}
+};
