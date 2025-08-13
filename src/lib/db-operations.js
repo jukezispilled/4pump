@@ -70,9 +70,6 @@ export async function createThread(threadData) {
   
   const result = await collection.insertOne(thread);
   
-  // IMPORTANT: Increment the board's post count when creating a thread
-  await incrementBoardPostCount(threadData.boardCode, 1);
-  
   return { ...thread, _id: result.insertedId };
 }
 
@@ -133,9 +130,6 @@ export async function createPost(postData) {
   };
   
   const result = await collection.insertOne(post);
-  
-  // IMPORTANT: Increment the board's post count when creating a post
-  await incrementBoardPostCount(postData.boardCode, 1);
   
   return { ...post, _id: result.insertedId };
 }
