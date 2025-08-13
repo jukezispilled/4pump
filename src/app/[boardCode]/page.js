@@ -162,7 +162,7 @@ export default function BoardPage({ params }) {
           return (
             <div key={thread.threadNumber} className="border border-gray-300 bg-white">
               <div className="p-4">
-                <div className="mb-2 flex items-start">
+                <div className="flex items-start">
                   <button
                     onClick={() => toggleThreadVisibility(thread.threadNumber)}
                     className="text-gray-600 hover:text-gray-800 font-mono text-sm mr-2 mt-0.5 select-none cursor-pointer"
