@@ -102,7 +102,7 @@ export default async function HomePage() {
                     </div>
                     <div className="flex justify-between items-center text-xs text-gray-500 absolute bottom-2 right-2">
                       <span>/{thread.boardCode}/</span>
-                      <span>{thread.replyCount || 0} replies</span>
+                      <span>{thread.replies || 0} replies</span>
                     </div>
                     <div className="text-xs text-gray-400 mt-1 absolute bottom-2 left-2">
                       {thread.createdAt && new Date(thread.createdAt).toLocaleDateString()}
