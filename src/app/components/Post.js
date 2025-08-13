@@ -109,7 +109,7 @@ export default function Post({ post, isOP = false, boardCode }) {
         <div className="flex-1">
           {post.content && (
             <div 
-              className="text-sm break-words whitespace-pre-wrap leading-[.8]"
+              className="text-sm break-words whitespace-pre-wrap leading-[1.2]"
               dangerouslySetInnerHTML={{ __html: parseContent(post.content) }}
             />
           )}
