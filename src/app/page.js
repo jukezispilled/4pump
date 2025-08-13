@@ -79,7 +79,7 @@ export default async function HomePage() {
               {popularThreads.map((thread, index) => (
                 <Link
                   key={thread.id || `thread-${index}`}
-                  href={`/${thread.boardCode}/thread/${thread.id || index}`}
+                  href={`/${thread.boardCode}/thread/${thread.threadNumber || thread.id || index}`}
                   className="block bg-white border border-gray-300 hover:bg-gray-50 transition-colors overflow-hidden relative"
                 >
                   {/* Thread image */}
