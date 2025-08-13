@@ -42,7 +42,7 @@ export default async function HomePage() {
       </div>
 
       <div className="text-center mb-8">
-        <img src="/head.png" alt="Logo" className="mx-auto mb-2 w-[30%]" />
+        <img src="/head.png" alt="Logo" className="mx-auto mb-2 w-[35%]" />
       </div>
 
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min">
