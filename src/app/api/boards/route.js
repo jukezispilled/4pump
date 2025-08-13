@@ -10,6 +10,7 @@ export async function GET() {
   }
 }
 
+/*
 export async function POST(request) {
   try {
     const { code, name, description, isNSFW, maxFileSize, allowedFileTypes } = await request.json();
@@ -34,3 +35,4 @@ export async function POST(request) {
     return Response.json({ error: 'Failed to create board' }, { status: 500 });
   }
 }
+*/
