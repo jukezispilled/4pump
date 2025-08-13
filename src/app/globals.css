@@ -53,8 +53,8 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   background-image: linear-gradient(
     to bottom,
     #8CF2BD 0%,
-    #B8F2D0 10%,
-    #EDFFE5 20%,
+    #B8F2D0 7%,
+    #EDFFE5 15%,
     #F3FFF0 100%
   );
 }
