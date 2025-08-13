@@ -94,8 +94,8 @@ export default function ThreadPage({ params }) {
               /{boardCode}/ - {thread.subject || `Thread #${thread.threadNumber}`}
             </h1>
           </div>
-          <div className='absolute right-5 block md:hidden'>
-            <h1 className="text-2xl font-bold text-[#890000]">
+          <div className='absolute top-2 right-5 block md:hidden'>
+            <h1 className="text-xl font-bold text-[#890000]">
               /{boardCode}/ - {thread.subject || `Thread #${thread.threadNumber}`}
             </h1>
           </div>
