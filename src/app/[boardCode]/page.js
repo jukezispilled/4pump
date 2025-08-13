@@ -102,7 +102,7 @@ export default function BoardPage({ params }) {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pb-4">
+    <div className="max-w-sm md:max-w-6xl mx-auto px-4 pb-4">
       {/* Top center board links */}
       <div className="text-center mb-4">
         <div className="text-sm">
@@ -139,8 +139,10 @@ export default function BoardPage({ params }) {
         </div>
         
         {board.isNSFW && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-4">
-            <strong>NSFW Warning:</strong> This board may contain adult content
+          <div className='absolute top-2 right-2 hidden md:block'>
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 -mb-6 w-min whitespace-nowrap">
+              <strong>NSFW Warning</strong>
+            </div>
           </div>
         )}
       </div>
