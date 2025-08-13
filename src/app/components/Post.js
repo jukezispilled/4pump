@@ -63,7 +63,7 @@ export default function Post({ post, isOP = false, boardCode }) {
             <span className="text-blue-600 font-bold ml-1">{post.tripcode}</span>
           )}
         </div>
-        <span className="text-gray-600 text-sm">{formatDate(post.createdAt)}</span>
+        <span className="text-gray-600 text-sm">{formatDate(post.createdAt)}(EST)</span>
         <span className="text-gray-600 ml-2 text-sm">No. {getPostNumber()}</span>
         
         {/* Display reply numbers */}
