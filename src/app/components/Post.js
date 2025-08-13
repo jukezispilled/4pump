@@ -37,6 +37,12 @@ export default function Post({ post, isOP = false, boardCode }) {
     }
   };
 
+  // Check if content contains greentext (lines starting with >)
+  const hasGreentext = (content) => {
+    if (!content) return false;
+    return content.split('\n').some(line => line.trim().startsWith('>'));
+  };
+
   const isAdmin = post.author === 'mogadmin';
 
   return (
@@ -109,7 +115,9 @@ export default function Post({ post, isOP = false, boardCode }) {
         <div className="flex-1">
           {post.content && (
             <div 
-              className="text-sm break-words whitespace-pre-wrap leading-[1.2]"
+              className={`text-sm break-words whitespace-pre-wrap ${
+                hasGreentext(post.content) ? 'leading-[0.6]' : 'leading-[1.2]'
+              }`}
               dangerouslySetInnerHTML={{ __html: parseContent(post.content) }}
             />
           )}
