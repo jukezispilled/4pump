@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBoards } from '@/lib/db-operations';
+import { getAllBoards, getAllThreads } from '@/lib/db-operations';
 import AddressDisplay from './components/Copy';
 import InfoModal from './components/InfoModal';
 
@@ -9,9 +9,16 @@ export const revalidate = 0;
 
 export default async function HomePage() {
   const boards = await getAllBoards();
+  const threads = await getAllThreads();
   
   // Calculate total posts across all boards
   const totalPosts = boards.reduce((sum, board) => sum + board.postCount, 0);
+  
+  // Get top 6 threads with images, sorted by reply count
+  const popularThreads = threads
+    .filter(thread => thread.imageUrl && thread.imageUrl.trim() !== '') // Only threads with images
+    .sort((a, b) => (b.replyCount || 0) - (a.replyCount || 0)) // Sort by reply count descending
+    .slice(0, 6); // Take top 6
   
   // Example contract address - replace with your actual contract address
   const contractAddress = "1234pump";
@@ -61,16 +68,55 @@ export default async function HomePage() {
         </div>
       </div>
 
-      {/* Popular Threads Coming Soon section */}
+      {/* Popular Threads section */}
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
         <div className='bg-[#8CF2BD]'>
           <h2 className="text-lg font-bold mb-4 text-[#890000] px-2">Popular Threads</h2>
         </div>
         <div className="p-4">
-          <div className="bg-white border border-gray-300 p-6 text-center">
-            <div className="text-lg font-semibold text-gray-500 mb-2">Coming Soon</div>
-            <div className="text-sm text-gray-400">Popular threads will be displayed here</div>
-          </div>
+          {popularThreads.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {popularThreads.map((thread, index) => (
+                <Link
+                  key={thread.id || `thread-${index}`}
+                  href={`/${thread.boardCode}/thread/${thread.id || index}`}
+                  className="block bg-white border border-gray-300 hover:bg-gray-50 transition-colors overflow-hidden relative"
+                >
+                  {/* Thread image */}
+                  <div className="aspect-video bg-gray-100 overflow-hidden relative">
+                    <img 
+                      src={thread.imageUrl} 
+                      alt={thread.subject || 'Thread image'}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Thread info */}
+                  <div className="p-3">
+                    <div className="font-semibold text-sm text-gray-800 mb-1 line-clamp-2">
+                      {thread.subject || 'No Subject'}
+                    </div>
+                    <div className="text-xs text-gray-600 mb-6 line-clamp-3">
+                      {thread.content?.substring(0, 100)}
+                      {thread.content?.length > 100 && '...'}
+                    </div>
+                    <div className="flex justify-between items-center text-xs text-gray-500 absolute bottom-2 right-2">
+                      <span>/{thread.boardCode}/</span>
+                      <span>{thread.replyCount || 0} replies</span>
+                    </div>
+                    <div className="text-xs text-gray-400 mt-1 absolute bottom-2 left-2">
+                      {thread.createdAt && new Date(thread.createdAt).toLocaleDateString()}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white border border-gray-300 p-6 text-center">
+              <div className="text-lg font-semibold text-gray-500 mb-2">No Popular Threads</div>
+              <div className="text-sm text-gray-400">No threads with images found yet</div>
+            </div>
+          )}
         </div>
       </div>
 

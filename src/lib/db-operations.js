@@ -7,6 +7,11 @@ export async function getAllBoards() {
   return await collection.find({}).sort({ code: 1 }).toArray();
 }
 
+export async function getAllThreads() {
+  const collection = await getCollection('threads');
+  return await collection.find({}).sort({ code: 1 }).toArray();
+}
+
 export async function getBoardByCode(code) {
   const collection = await getCollection('boards');
   return await collection.findOne({ code });
