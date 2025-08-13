@@ -80,7 +80,7 @@ export default async function HomePage() {
                 <Link
                   key={thread.id || `thread-${index}`}
                   href={`/${thread.boardCode}/thread/${thread.threadNumber || thread.id || index}`}
-                  className="block bg-white border border-gray-300 hover:bg-gray-50 transition-colors overflow-hidden relative"
+                  className="block bg-white border border-gray-300 overflow-hidden relative"
                 >
                   {/* Thread image */}
                   <div className="aspect-video bg-white p-2 overflow-hidden relative">
