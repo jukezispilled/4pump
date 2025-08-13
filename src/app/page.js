@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllBoards, getAllThreads } from '@/lib/db-operations';
 import AddressDisplay from './components/Copy';
 import InfoModal from './components/InfoModal';
@@ -48,7 +49,18 @@ export default async function HomePage() {
       </div>
 
       <div className="text-center mb-8">
-        <img src="/head.png" alt="Logo" className="mx-auto mb-2 w-[35%] mt-4 md:mt-0" />
+        <Image 
+          src="/head.png" 
+          alt="Logo" 
+          width={400} 
+          height={200}
+          className="mx-auto mb-2 mt-4 md:mt-0"
+          style={{
+            width: '35%',
+            height: 'auto',
+          }}
+          priority
+        />
       </div>
 
       <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min">
