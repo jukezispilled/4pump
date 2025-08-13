@@ -14,37 +14,173 @@ import { createBoard } from '../src/lib/db-operations.js';
 
 const boards = [
   {
+    code: 'a',
+    name: 'Pump',
+    description: 'Pump.fun Discourse',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
     code: 'b',
-    name: 'Random',
-    description: 'Random discussion',
+    name: 'Majors',
+    description: 'Major Crypto',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'c',
+    name: 'ALTs',
+    description: 'Alt Cryptos',
     isNSFW: true,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'd',
+    name: 'Memes',
+    description: 'Meme Discourse',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'e',
+    name: 'Shills',
+    description: 'Shill Your Coin',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'f',
+    name: 'PnLs',
+    description: 'Profit/Loss',
+    isNSFW: false,
     maxFileSize: 5 * 1024 * 1024,
     allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
   },
   {
     code: 'g',
-    name: 'Technology',
-    description: 'Technology discussion',
+    name: 'KOLs',
+    description: 'Key Opinion Leaders',
     isNSFW: false,
     maxFileSize: 5 * 1024 * 1024,
     allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
   },
   {
-    code: 'pol',
-    name: 'Politically Incorrect',
-    description: 'Political discussion',
+    code: 'h',
+    name: 'TA',
+    description: 'Technical Analysis',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'i',
+    name: 'Ruggers',
+    description: 'Mf Ruggers',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'j',
+    name: 'FUD',
+    description: 'Fear, Uncertainty, Doubt',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'k',
+    name: 'NFTs',
+    description: 'Non-Fungible Tokens',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'l',
+    name: 'Jeets',
+    description: 'Always Selling',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'm',
+    name: 'Tech',
+    description: 'Gud Tek',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'n',
+    name: 'Crashouts',
+    description: 'Holy Crashouts',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'o',
+    name: 'Confessions',
+    description: 'Confess Anything',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'p',
+    name: 'Unemployment',
+    description: 'That One Unemployed Friend',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'q',
+    name: 'gm',
+    description: 'say it back',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 'r',
+    name: 'wagmi',
+    description: 'wagmi and hopium',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 's',
+    name: 'Culture',
+    description: 'Crypto Culture',
+    isNSFW: false,
+    maxFileSize: 5 * 1024 * 1024,
+    allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+  },
+  {
+    code: 't',
+    name: 'Cryptohoes',
+    description: 'Crypto thotties',
     isNSFW: true,
     maxFileSize: 5 * 1024 * 1024,
     allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
   },
   {
-    code: 'a',
-    name: 'Anime & Manga',
-    description: 'Anime and manga discussion',
-    isNSFW: false,
+    code: 'u',
+    name: 'Chillhouse',
+    description: 'Just a Chillhouse',
+    isNSFW: true,
     maxFileSize: 5 * 1024 * 1024,
     allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
-  }
+  },
 ];
 
 async function initializeDatabase() {
