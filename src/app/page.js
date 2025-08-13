@@ -83,11 +83,11 @@ export default async function HomePage() {
                   className="block bg-white border border-gray-300 hover:bg-gray-50 transition-colors overflow-hidden relative"
                 >
                   {/* Thread image */}
-                  <div className="aspect-video bg-gray-100 overflow-hidden relative">
+                  <div className="aspect-video bg-white p-2 overflow-hidden relative">
                     <img 
                       src={thread.imageUrl} 
                       alt={thread.subject || 'Thread image'}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   
