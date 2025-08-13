@@ -23,7 +23,7 @@ export default async function HomePage() {
   // Get top 6 threads with images, sorted by reply count
   const popularThreads = threads
     .filter(thread => thread.imageUrl && thread.imageUrl.trim() !== '') // Only threads with images
-    .sort((a, b) => (b.replyCount || 0) - (a.replyCount || 0)) // Sort by reply count descending
+    .sort((a, b) => (b.replies || 0) - (a.replies || 0)) // Sort by reply count descending
     .slice(0, 6); // Take top 6
   
   // Example contract address - replace with your actual contract address
