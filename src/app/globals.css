@@ -66,3 +66,8 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     #F3F6FF 20%
   );
 }
+
+.post-content .greentext-line {
+  line-height: 0.8 !important;
+  display: block;
+}
