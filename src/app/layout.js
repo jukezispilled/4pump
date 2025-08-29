@@ -2,8 +2,8 @@ import "./globals.css"
 import BodyWrapper from './components/BodyWrapper'
 
 export const metadata = {
-  title: "4pump",
-  description: "for the culture",
+  title: "4bonk",
+  description: "forum of the trenches",
 }
 
 export default function RootLayout({ children }) {

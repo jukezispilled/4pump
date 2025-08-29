@@ -28,15 +28,15 @@ export default async function HomePage() {
     .slice(0, 6); // Take top 6
   
   // Example contract address - replace with your actual contract address
-  const contractAddress = "Fbrmrf1fW948v9kyxQuSRyjJmHwxaq6YLfbUQTucpump";
+  const contractAddress = "123bonk";
 
   return (
     <div className="max-w-4xl mx-auto p-4 min-h-screen flex flex-col">
       {/* Top left area with X link and contract address */}
-      <div className="flex justify-between items-start mb-4 absolute top-4 left-4">
+      <div className="flex justify-between items-start mb-4 absolute top-4 right-4">
         <div className="flex items-center gap-1">
           <Link
-            href="https://x.com/4pumporg"
+            href="https://x.com/4bonkorg"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#890000] font-semibold text-base mt-0"
@@ -63,8 +63,8 @@ export default async function HomePage() {
         />
       </div>
 
-      <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min">
-        <div className='bg-[#8CF2BD]'>
+      <div className="bg-[#fff0c5] border-1 border-orange-700 h-min">
+        <div className='bg-[#f0cb5c]'>
           <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Boards</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4">
@@ -72,7 +72,7 @@ export default async function HomePage() {
             <Link
               key={board.code}
               href={`/${board.code}`}
-              className="block p-1 bg-white border border-gray-300 hover:bg-gray-50 transition-colors relative"
+              className="block p-1 bg-white border-1 border-orange-700 hover:bg-gray-50 transition-colors relative"
             >
               <div className="font-bold text-blue-600">/{board.code}/</div>
               <div className="text-sm text-gray-700">{board.name}</div>
@@ -87,8 +87,8 @@ export default async function HomePage() {
       </div>
 
       {/* Popular Threads section */}
-      <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
-        <div className='bg-[#8CF2BD]'>
+      <div className="bg-[#fff0c5] border-1 border-orange-700 h-min mt-4">
+        <div className='bg-[#f0cb5c]'>
           <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Popular Threads</h2>
         </div>
         <div className="p-4">
@@ -137,7 +137,7 @@ export default async function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="bg-white border border-gray-300 p-6 text-center">
+            <div className="bg-white border-1 border-orange-700 p-6 text-center">
               <div className="text-lg font-semibold text-gray-500 mb-2">No Popular Threads</div>
               <div className="text-sm text-gray-400">No threads with images found yet</div>
             </div>
@@ -146,17 +146,17 @@ export default async function HomePage() {
       </div>
 
       {/* Stats area with same style as boards */}
-      <div className="bg-[#f5fdf3] border-2 border-gray-300 h-min mt-4">
-        <div className='bg-[#8CF2BD]'>
+      <div className="bg-[#fff0c5] border-1 border-orange-700 h-min mt-4">
+        <div className='bg-[#f0cb5c]'>
           <h2 className="text-lg font-bold mb-2 text-[#890000] px-2">Stats</h2>
         </div>
         <div className="p-4">
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white border border-gray-300 p-4 text-center">
+            <div className="bg-white border-1 border-orange-700 p-4 text-center">
               <div className="text-2xl font-bold text-[#890000]">{totalPosts.toLocaleString()}</div>
               <div className="text-sm text-gray-600">Total Posts</div>
             </div>
-            <div className="bg-white border border-gray-300 p-4 text-center">
+            <div className="bg-white border-1 border-orange-700 p-4 text-center">
               <div className="text-2xl font-bold text-[#890000]">{boards.length}</div>
               <div className="text-sm text-gray-600">Total Boards</div>
             </div>
@@ -165,7 +165,7 @@ export default async function HomePage() {
       </div>
 
       <div className='text-[10px] text-[#890000] text-center mt-auto py-4'>
-        Copyright © 4pump 2025. All rights reserved.
+        Copyright © 4bonk 2025. All rights reserved.
       </div>
     </div>
   );
