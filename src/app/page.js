@@ -28,7 +28,7 @@ export default async function HomePage() {
     .slice(0, 6); // Take top 6
   
   // Example contract address - replace with your actual contract address
-  const contractAddress = "123bonk";
+  const contractAddress = "dogbonk";
 
   return (
     <div className="max-w-4xl mx-auto p-4 min-h-screen flex flex-col">
